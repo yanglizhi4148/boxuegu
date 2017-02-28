@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
-    <?php include('../common/style.html')?>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <?php include('../common/style.html') ?>
 </head>
 <body>
-
-<?php include('../common/aside.html')?>
+    <?php include('../common/aside.html') ?>
     <!-- 主体 -->
     <div class="main">
         <div class="container-fluid">
@@ -20,7 +21,7 @@
                     <li class="active">讲师列表</li>
                 </ol>
                 <div class="page-title">
-                    <a href="add.html" class="btn btn-success btn-sm pull-right">添加讲师</a>
+                    <a href="./teacher_add.html" class="btn btn-success btn-sm pull-right">添加讲师</a>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -55,7 +56,7 @@
                                 <td>15901256171</td>
                                 <td>
                                     <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
-                                    <a href="add.html" class="btn btn-info btn-xs">编 辑</a>
+                                    <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
                                     <a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
                                 </td>
                             </tr>
@@ -116,7 +117,6 @@
             </div>
         </div>
     </div>
-
-<?php include('../common/script.html')?>
+    <?php include('../common/script.html') ?>
 </body>
 </html>

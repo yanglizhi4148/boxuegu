@@ -1,6 +1,6 @@
 /**
- * Created by 琴瑟 on 2017/2/25.
+ * Created by 琴瑟 on 2017/2/28.
  */
-define(['jquery'],function($){
-    console.log(111);
+define(['jquery','common','nprogress'],function($,undefined,nprogress){
+    nprogress.done();
 });
