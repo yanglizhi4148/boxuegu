@@ -2,6 +2,12 @@
  * Created by 琴瑟 on 2017/2/26.
  */
 define(['jquery','jqueryCookie'],function($,undefined){
+    //ajax请求loading
+    $(document).ajaxStart(function(){
+        $(".overlay").show();
+    }).ajaxStop(function(){
+        $(".overlay").hide();
+    });
     //左侧导航下拉列表
     $(".navs a").on('click',function(){
         $(this).next().slideToggle();
@@ -21,13 +27,11 @@ define(['jquery','jqueryCookie'],function($,undefined){
     //退出功能
     $('#logout').on('click',function(){
         $.post('/v6/logout',function(data){
-            if(data.code===200){
+            if(data.code==200){
                 location.href='/html/home/login.html';
             }
-        })
+        });
     });
-
-
 
     //获取本地cookie用户信息，同时做容错处理
     var userInfo=null;

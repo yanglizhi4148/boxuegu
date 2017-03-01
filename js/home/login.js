@@ -11,12 +11,11 @@ define(['jquery','jqueryCookie','nprogress'],function($,undefined,nprogress){
 
     var userInfo=null;
     try{
-        JSON.parse($.cookie('userInfo'));
+        userInfo=JSON.parse($.cookie('userInfo'));
     }catch(e){
         userInfo={};
     }
-    $('.login .avatar img').attr('src',userInfo.tc_avatar?userInfo.tc_avatar:'/img/default.png');
-    /**
+    $('.login .avatar img').attr('src', userInfo.tc_avatar? userInfo.tc_avatar: '/img/default.png');    /**
      * 1.先监听form表单的提交事件
      * 2.事件回调return false阻止默认的提交
      * 3.事件回调中通过ajax的方式发送表单数据
