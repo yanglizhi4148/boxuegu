@@ -12,6 +12,8 @@ requirejs.config({
         template:'lib/artTemplate-3.0.1/template',
         datepicker:'lib/bootstrap-datepicker/js/bootstrap-datepicker',
         datepickerLanguage:'lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        region:'lib/region/jquery.region',
+        ckeditor:'lib/ckeditor/ckeditor',
         //自己写的路径配置
         courseAddStep1:'js/course/add_step1',
         courseAddStep2:'js/course/add_step2',
@@ -39,6 +41,9 @@ requirejs.config({
         //
         datepickerLanguage:{
             deps:['jquery','datepicker']
+        },
+        ckeditor:{
+            exports:'CKEDITOR'
         }
     }
 });

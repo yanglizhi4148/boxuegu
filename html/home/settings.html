@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include('../common/style.html') ?>
+    <link rel="stylesheet" href="/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"/>
 </head>
 <body>
     <?php include('../common/aside.html') ?>
@@ -19,7 +20,7 @@
             </div>
         </div>
     </div>
-    <script type="text/template" id="profileForm">
+    <script type="text/template" id="profile-form-tpl">
         <form action="" class="form-horizontal">
             <input type="hidden" name="tc_id" value="{{ tc_id }}">
             <div class="form-group">
@@ -31,11 +32,7 @@
             <div class="form-group">
                 <label for="" class="col-md-3 control-label">头像</label>
                 <div class="col-md-2 preview">
-                    {{ if tc_avatar }}
-                    <img src="{{ tc_avatar }}">
-                    {{ else }}
-                    <img src="/public/images/default.png">
-                    {{ /if }}
+                    <img src="{{ tc_avatar?tc_avatar:'/img/default.png' }}">
                     <input type="file" id="upfile">
                     <div class="cover">
                         <i class="fa fa-upload"></i>       
@@ -62,7 +59,7 @@
             <div class="form-group">
                 <label for="" class="col-md-3 control-label">出生日期</label>
                 <div class="col-md-5">
-                    <input type="text" data-date-language="zh-CN" data-date-format="yyyy-mm-dd" data-provide="datepicker" class="form-control input-sm" name="tc_birthday" value="{{ tc_birthday }}">
+                    <input type="text" data-date-language="zh-CN" data-date-format="yyyy-mm-dd" data-provide="datepicker" class="datepicker form-control input-sm" name="tc_birthday" value="{{ tc_birthday }}">
                 </div>
             </div>
             <div class="form-group">
@@ -92,7 +89,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-md-3 control-label">入职日期</label>
+                <label for="" class="datepicker col-md-3 control-label">入职日期</label>
                 <div class="col-md-5">
                     <input type="text" data-date-language="zh-CN" data-date-format="yyyy-mm-dd" data-provide="datepicker" class="form-control input-sm" name="tc_join_date" value="{{ tc_join_date }}">
                 </div>
@@ -100,7 +97,7 @@
             <div class="form-group">
                 <label for="" class="col-md-3 control-label">个人介绍</label>
                 <div class="col-md-5 ckeditor">
-                    <textarea name="tc_introduce" id="ckEditor" rows="15" class="form-control input-sm">
+                    <textarea name="tc_introduce" id="ckeditor" rows="15" class="form-control input-sm">
                         {{ tc_introduce }}
                     </textarea>
                 </div>
