@@ -14,6 +14,7 @@ requirejs.config({
         datepickerLanguage:'lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         region:'lib/region/jquery.region',
         ckeditor:'lib/ckeditor/ckeditor',
+        uploadify:'lib/uploadify/jquery.uploadify',
         //自己写的路径配置
         courseAddStep1:'js/course/add_step1',
         courseAddStep2:'js/course/add_step2',
@@ -44,6 +45,9 @@ requirejs.config({
         },
         ckeditor:{
             exports:'CKEDITOR'
+        },
+        uploadify:{
+            deps:['jquery']
         }
     }
 });
