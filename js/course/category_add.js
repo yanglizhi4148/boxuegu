@@ -34,7 +34,11 @@ define(['jquery','common','nprogress','util','template'],function($,undefined,np
                     }
                 });
             }else{
-                fn({});
+                $.get('/v6/category/top',function(data){
+                    if(data.code==200){
+                        fn({top:data.result});
+                    }
+                });
             }
         },
 

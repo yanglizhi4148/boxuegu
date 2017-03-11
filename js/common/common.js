@@ -21,7 +21,18 @@ define(['jquery','jqueryCookie'],function($,undefined){
      * 3.最后获取该a标签所有的父ul标签，让他们展示出来，如果不展示，我是看不着的。
      *
      */
+    var navPathMap={
+        '/html/course/add_step1.html':'/html/course/add.html',
+        '/html/course/add_step2.html':'/html/course/add.html',
+        '/html/course/add_step3.html':'/html/course/add.html',
+        '/html/course/category_add.html':'/html/course/category.html',
+        '/html/teacher/add.html':'/html/teacher/list.html'
+    };
+
     var pathname=window.location.pathname;
+
+    pathname=navPathMap[pathname]||pathname;
+
     $('.navs a').removeClass('active').filter('[href="'+pathname+'"]').addClass('active').parents('ul').show();
 
     //退出功能

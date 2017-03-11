@@ -39,17 +39,7 @@ define(['jquery','common','nprogress','template','region','datepicker','datepick
                 }
             });
             //配置富文本编辑器
-            //ckeditor.replace();
-            //ckeditor.replace('ckeditor',{
-                //toolbarGroups:[
-                //    { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-                //    { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-                //    { name: 'insert' },
-                //    { name: 'tools' },
-                //    { name: 'styles' },
-                //    { name: 'colors' }
-                //]
-            //});
+            var edit=ckeditor.replace('ckeditor');
 
             //监听提交事件
             $('.form-horizontal').on('submit',function(){
@@ -63,6 +53,10 @@ define(['jquery','common','nprogress','template','region','datepicker','datepick
                 //var d=$('#d'.find('option:selected').text());
                 //var hometown=p+'|'+c+'|'+d;
 
+                //设置文本框的内容为富文本编辑器内容
+                edit.updateElement();
+
+                //修改数据，成功后刷新当前页
                 $.ajax({
                     url:'/v6/teacher/modify',
                     type:'post',
